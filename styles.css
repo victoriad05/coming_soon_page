@@ -1,0 +1,252 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap");
+
+:root {
+  --primary-desaturated-red: hsl(0, 36%, 70%);
+  --primary-soft-red: hsl(0, 93%, 68%);
+
+  --neutral-dark-grayish-red: hsl(0, 6%, 24%);
+
+  --gradient-one: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+  --gradient-two: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 16px;
+}
+
+header {
+  display: none;
+}
+.image-mobile {
+  display: none;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 100vh;
+  background-image: var(--gradient-one);
+  background: url(/images/bg-pattern-desktop.svg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.info-container,
+.image-desktop {
+  display: flex;
+}
+
+.info-container {
+  flex-direction: column;
+  gap: 50px;
+  padding: 90px 160px;
+}
+
+.main-content {
+  padding: 50px 0;
+}
+
+.main-content h1 {
+  font-size: 5rem;
+  text-transform: uppercase;
+  letter-spacing: 12px;
+  color: var(--neutral-dark-grayish-red);
+}
+
+.title-part {
+  font-size: 5rem;
+  text-transform: uppercase;
+  font-weight: 200;
+  color: var(--primary-desaturated-red);
+}
+
+.main-content p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--primary-desaturated-red);
+  padding: 20px 0 40px 0;
+}
+
+.img-desktop {
+  width: 650px;
+  height: auto;
+  object-fit: cover;
+}
+
+.form-container {
+  position: relative;
+}
+
+.input-form input {
+  border-radius: 50px;
+  width: 100%;
+  max-width: 450px;
+  padding: 15px 2rem;
+  background-color: transparent;
+  border: 1px solid hsla(0, 13%, 71%, 0.451);
+  outline: none;
+}
+
+.input-form input:hover {
+  outline: var(--primary-soft-red);
+}
+
+i {
+  position: absolute;
+  top: 0px;
+  right: 56px;
+  padding: 16px 28px;
+  color: var(--primary-soft-red);
+  font-size: 1.2rem;
+  visibility: hidden;
+}
+
+::placeholder {
+  color: hsla(0, 14%, 71%, 0.795);
+}
+
+.input-form button {
+  border-radius: 50px;
+  padding: 16px 28px;
+  border: none;
+  background-image: var(--gradient-two);
+  position: absolute;
+  height: 100%;
+  top: 0px;
+  right: 0.1px;
+  cursor: pointer;
+  box-shadow: 6px 10px 16px hsla(0, 7%, 45%, 0.359);
+}
+
+.input-form button:hover {
+  background-image: linear-gradient(135deg, hsl(0, 89%, 82%), hsl(0, 59%, 67%));
+  transition: 0.5s ease-in-out;
+}
+
+small {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--primary-soft-red);
+  position: absolute;
+  top: 62px;
+  right: 210px;
+  text-align: center;
+  visibility: hidden;
+  width: 50%;
+  /* margin-top: 15px; */
+  /* padding-left: 30px; */
+  /* display: flex;
+    align-items: center;*/
+}
+
+.form-container.error input {
+  border-color: var(--primary-soft-red);
+}
+.form-container.error i {
+  visibility: visible;
+}
+.form-container.error small {
+  visibility: visible;
+}
+
+@media screen and (max-width: 820px) {
+  .nav-logo {
+    display: none;
+  }
+
+  .image-desktop {
+    display: none;
+  }
+
+  .main-container {
+    flex-direction: column;
+    background-image: var(--gradient-one);
+    height: 100%;
+    width: 100%;
+  }
+
+  header {
+    display: flex;
+    padding: 40px 60px;
+    background-image: var(--gradient-one);
+    width: 100%;
+  }
+
+  .image-mobile {
+    display: block;
+    width: 100%;
+  }
+
+  .img-mobile {
+    width: 100%;
+    height: auto;
+  }
+
+  .main-content {
+    text-align: center;
+  }
+
+  small {
+    font-size: 1rem;
+    position: absolute;
+    top: 56px;
+    right: 5px;
+    width: 100%;
+    text-align: center;
+    visibility: hidden;
+  }
+  ::placeholder {
+    color: hsla(0, 14%, 71%, 0.795);
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 736px) {
+  .info-container {
+    flex-direction: column;
+    gap: 50px;
+    padding: 60px 66px;
+  }
+
+  .main-content h1 {
+    font-size: 3rem;
+    letter-spacing: 9px;
+  }
+
+  .title-part {
+    font-size: 3rem;
+  }
+
+  .main-content p {
+    font-size: 1rem;
+  }
+
+  .input-form input {
+    padding: 10px 2rem;
+  }
+
+  .input-form button {
+    padding: 10px 20px;
+  }
+
+  i {
+    position: absolute;
+    top: 0px;
+    right: 35px;
+    padding: 10px 2rem;
+  }
+
+  small {
+    font-size: 1rem;
+    position: absolute;
+    top: 56px;
+    right: 10px;
+    width: 100%;
+    text-align: center;
+    visibility: hidden;
+  }
+}
